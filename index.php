@@ -47,12 +47,9 @@ $dataFilms = $pdo->query('SELECT * FROM netland.films')->fetchAll();
             } ?>
         </td>
         <td>
-            <a href='http://localhost/php1.web/series.php?id=1'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/series.php?id=2'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/series.php?id=3'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/series.php?id=4'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/series.php?id=5'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/series.php?id=6'>Bekijk details</a>
+        <?php foreach($dataSeries as $row){
+            echo "<a href='http://localhost/php.web/series.php?id=" . $row['id'] . "'>Bekijk details</a><br>";
+        } ?>
         </td>
     </tr>
 </table>
@@ -76,11 +73,9 @@ $dataFilms = $pdo->query('SELECT * FROM netland.films')->fetchAll();
             } ?>
         </td>
         <td>
-            <a href='http://localhost/php1.web/films.php?id=1'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/films.php?id=4'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/films.php?id=5'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/films.php?id=6'>Bekijk details</a><br>
-            <a href='http://localhost/php1.web/films.php?id=7'>Bekijk details</a><br>
+        <?php foreach($dataFilms as $row){
+            echo "<a href='http://localhost/php.web/films.php?id=" . $row['ID'] . "'>Bekijk details</a><br>";
+        } ?>
         </td>
     </tr>
 </table>

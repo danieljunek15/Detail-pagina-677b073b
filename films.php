@@ -17,9 +17,7 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$dataFilms = $pdo->prepare('SELECT *
-        FROM netland.films 
-        WHERE ID = :ID');
+$dataFilms = $pdo->prepare('SELECT * FROM netland.films WHERE ID = :ID');
 $dataFilms->execute(array(':ID' => $_GET['id']));
 $dataFilms = $dataFilms->fetchAll();
 
@@ -32,7 +30,7 @@ $dataFilms = $dataFilms->fetchAll();
     <title>Netfix films</title>
     </head>
     <body>
-        <a href="http://localhost/php1.web/">Terug</a>
+        <a href="http://localhost/php.web/">Terug</a>
         <h1>   
             <?php foreach ($dataFilms as $row){
                 echo $row['title'];

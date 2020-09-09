@@ -17,9 +17,7 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$dataSeries = $pdo->prepare('SELECT *
-        FROM netland.series 
-        WHERE id = :id');
+$dataSeries = $pdo->prepare('SELECT * FROM netland.series WHERE id = :id');
 $dataSeries->execute(array(':id' => $_GET['id']));
 $dataSeries = $dataSeries->fetchAll();
 
@@ -30,7 +28,7 @@ $dataSeries = $dataSeries->fetchAll();
     <title>Netfix series</title>
     </head>
     <body>
-    <a href="http://localhost/php1.web/">Terug</a>
+    <a href="http://localhost/php.web/">Terug</a>
         <h1>
             <?php foreach($dataSeries as $row){
                 echo $row['title'];
@@ -38,10 +36,10 @@ $dataSeries = $dataSeries->fetchAll();
         </h1>
         <h4>
             <?php foreach($dataSeries as $row){
-                echo "Awards?"." ".$row['has_won_awards']."<br />";
-                echo "Seasons"." ".$row['seasons']."<br />";
-                echo "Country"." ".$row['country']."<br />";
-                echo "Language"." ".$row['language'];
+                echo 'Awards?'." ".$row['has_won_awards']."<br />";
+                echo 'Seasons'." ".$row['seasons']."<br />";
+                echo 'Country'." ".$row['country']."<br />";
+                echo 'Language'." ".$row['language'];
             } ?>
         </h4>
         <h5>
